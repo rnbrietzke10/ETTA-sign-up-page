@@ -3,53 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Sign Up</title>
   </head>
   <body>
-    <div class="sign-up__container">
-      <h1 class="sign-up__heading">Sign Up</h1>
-      <form action="" class="sign-up__form">
-        <input
-          class="sign-up__input"
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Name"
-        />
-        <input
-          class="sign-up__input"
-          type="text"
-          name="school"
-          id="school"
-          placeholder="School"
-        />
-        <input
-          class="sign-up__input"
-          type="number"
-          name="age"
-          id="age"
-          placeholder="Age"
-        />
+    <div class="container">
+      <form data-multi-step class="sign-up__form">
+        <div class="card active" date-step="1">
+          <h2 class="step-title">SIGN UP</h2>
+          <input
+            class="sign-up__input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+          />
+          <input
+            class="sign-up__input"
+            type="text"
+            name="school"
+            id="school"
+            placeholder="School"
+          />
+          <input
+            class="sign-up__input"
+            type="number"
+            name="age"
+            id="age"
+            placeholder="Age"
+          />
 
-        <!-- Grade level to be dropdown, Number or text example freshman, sophmore, junior, senior -->
-        <input
-          class="sign-up__input"
-          type="text"
-          name="grade-level"
-          id="grade-level"
-          placeholder="Grade Level"
-        />
+          <!-- Grade level to be dropdown, Number or text example freshman, sophmore, junior, senior -->
+          <input
+            class="sign-up__input"
+            type="text"
+            name="grade-level"
+            id="grade-level"
+            placeholder="Grade Level"
+          />
 
-        <input
-          class="sign-up__input"
-          type="text"
-          name="join-date"
-          id="join-date"
-          placeholder="Month/Year Joined of Program"
-        />
-        <input class="sign-up__btn" type="button" value="Next" />
+          <input
+            class="sign-up__input"
+            type="text"
+            name="join-date"
+            id="join-date"
+            placeholder="Month/Year Joined of Program"
+          />
+          <button class="sign-up__btn" type="button">Next</button>
+        </div>
+        <!-- Classified Information -->
+        <div class="card" date-step="1">
+          <h2 class="step-title">SIGN UP</h2>
+          <input
+            class="sign-up__input"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+          />
+          <input
+            class="sign-up__input"
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+          />
+          <input
+            class="sign-up__input"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+
+          <input
+            class="sign-up__input"
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            placeholder="Re-Enter Password"
+          />
+          <div class="btn-group">
+            <button class="sign-up__btn" type="button">Prev</button>
+            <button class="sign-up__btn" type="submit">Submit</button>
+          </div>
+        </div>
       </form>
+
+      <img class="logo" src="./assets/IMG_2982.jpeg" alt="ETTA logo" />
     </div>
-    <img src="./assets/IMG_2982.jpeg" alt="ETTA logo" />
+    <script src="./script.js" defer></script>
   </body>
 </html>
