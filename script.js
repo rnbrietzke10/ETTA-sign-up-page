@@ -10,6 +10,8 @@ const email = document.getElementById('email');
 const username = document.getElementById('username');
 const password = document.getElementById(password);
 const confirmPassword = document.getElementById('confirm-password');
+const form = document.getElementById('form');
+const errorMessage = document.getElementById('error');
 
 /***************** handle multistep form ******************/
 
@@ -40,3 +42,44 @@ function showCurrentStep() {
     step.classList.toggle('active', index === currentStep);
   });
 }
+
+/************ handle form submission ***********/
+
+const BASE_URL = 'http://127.0.0.1:8080/';
+function submitForm(e) {
+  e.preventDefault();
+  let messages = [];
+  if (password !== confirmPassword) {
+    messages.push('Password and Confirm Password does not match');
+  }
+  if (age > 18 || age < 13) {
+    messages.push('You must be between 13 and a8 years old.');
+  }
+
+  if (messages.length > 0) {
+    errorMessage.innerText = messages.join(', ');
+  }
+
+  const formData = new FormData(form);
+
+  fetch(BASE_URL, {
+    method: 'POST',
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('network return error');
+      }
+      return response.json();
+    })
+    .then(resp => {
+      // response or redirect to page
+      /******* TODO ********/
+    })
+    .catch(error => {
+      // Handle error
+      console.log('error ', error);
+    });
+}
+
+form.addEventListener('submit', submitForm);
