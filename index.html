@@ -8,8 +8,9 @@
   </head>
   <body>
     <div class="container">
+      <div id="error"></div>
       <form data-multi-step class="sign-up__form">
-        <div class="card active" date-step="1">
+        <div class="card active" data-step>
           <h2 class="step-title">SIGN UP</h2>
           <input
             class="sign-up__input"
@@ -17,6 +18,7 @@
             name="name"
             id="name"
             placeholder="Name"
+            required
           />
           <input
             class="sign-up__input"
@@ -24,6 +26,7 @@
             name="school"
             id="school"
             placeholder="School"
+            required
           />
           <input
             class="sign-up__input"
@@ -31,6 +34,7 @@
             name="age"
             id="age"
             placeholder="Age"
+            required
           />
 
           <!-- Grade level to be dropdown, Number or text example freshman, sophmore, junior, senior -->
@@ -40,6 +44,7 @@
             name="grade-level"
             id="grade-level"
             placeholder="Grade Level"
+            required
           />
 
           <input
@@ -48,18 +53,20 @@
             name="join-date"
             id="join-date"
             placeholder="Month/Year Joined of Program"
+            required
           />
-          <button class="sign-up__btn" type="button">Next</button>
+          <button class="sign-up__btn" type="button" data-next>Next</button>
         </div>
         <!-- Classified Information -->
-        <div class="card" date-step="1">
-          <h2 class="step-title">SIGN UP</h2>
+        <div class="card" data-step>
+          <h2 class="step-title">CLASSIFIED INFORMATION</h2>
           <input
             class="sign-up__input"
             type="email"
             name="email"
             id="email"
             placeholder="Email"
+            required
           />
           <input
             class="sign-up__input"
@@ -67,6 +74,7 @@
             name="username"
             id="username"
             placeholder="Username"
+            required
           />
           <input
             class="sign-up__input"
@@ -74,6 +82,7 @@
             name="password"
             id="password"
             placeholder="Password"
+            required
           />
 
           <input
@@ -82,9 +91,108 @@
             name="confirm-password"
             id="confirm-password"
             placeholder="Re-Enter Password"
+            required
           />
           <div class="btn-group">
-            <button class="sign-up__btn" type="button">Prev</button>
+            <button class="sign-up__btn" type="button" data-prev>Prev</button>
+            <button class="sign-up__btn" type="button" data-next>Next</button>
+          </div>
+        </div>
+
+        <!-- choose what you want to learn  -->
+
+        <div class="card" data-step>
+          <h2 class="step-title">CHOOSE ONE<br /></h2>
+          <h3 class="step-subtitle">I want to learn...</h3>
+          <div class="radio-input-container">
+            <input
+              class="sign-up__radio-btn"
+              type="radio"
+              id="coding"
+              name="learn"
+              value="Computer Programming/Coding"
+              checked
+            />
+            <label class="sign-up__input-label" for="coding"
+              >Computer Programming/Coding</label
+            >
+          </div>
+          <div class="radio-input-container">
+            <input
+              class="sign-up__radio-btn"
+              type="radio"
+              id="cyber-security"
+              name="learn"
+              value="Cyber Security"
+            />
+            <label class="sign-up__input-label" for="cyber-security"
+              >Cyber Security</label
+            >
+          </div>
+          <div class="radio-input-container">
+            <input
+              class="sign-up__radio-btn"
+              type="radio"
+              id="robotics"
+              name="learn"
+              value="Robotics"
+            />
+            <label class="sign-up__input-label" for="robotics">Robotics</label>
+          </div>
+
+          <div class="btn-group">
+            <button class="sign-up__btn" type="button" data-prev>Prev</button>
+            <button class="sign-up__btn" type="button" data-next>Next</button>
+          </div>
+        </div>
+
+        <!-- choose what you want to learn  -->
+
+        <div class="card" data-step>
+          <h2 class="step-title">
+            CHOOSE ONE<br />
+            (OPTIONAL)
+          </h2>
+          <h3 class="step-subtitle">I also want to learn...</h3>
+          <div class="radio-input-container">
+            <input
+              class="sign-up__radio-btn"
+              type="radio"
+              id="also-coding"
+              name="also-learn"
+              value="Computer Programming/Coding"
+            />
+            <label class="sign-up__input-label" for="also-coding"
+              >Computer Programming/Coding</label
+            >
+          </div>
+          <div class="radio-input-container">
+            <input
+              class="sign-up__radio-btn"
+              type="radio"
+              id="also-cyber-security"
+              name="also-learn"
+              value="Cyber Security"
+            />
+            <label class="sign-up__input-label" for="also-cyber-security"
+              >Cyber Security</label
+            >
+          </div>
+          <div class="radio-input-container">
+            <input
+              class="sign-up__radio-btn"
+              type="radio"
+              id="also-robotics"
+              name="also-learn"
+              value="Robotics"
+            />
+            <label class="sign-up__input-label" for="also-robotics"
+              >Robotics</label
+            >
+          </div>
+
+          <div class="btn-group">
+            <button class="sign-up__btn" type="button" data-prev>Prev</button>
             <button class="sign-up__btn" type="submit">Submit</button>
           </div>
         </div>

@@ -14,25 +14,29 @@
   font-weight: 300;
   font-size: 2rem;
   letter-spacing: 7px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  text-align: center;
+  max-width: 325px;
 }
 
 .card {
   display: none;
 }
 .card.active {
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 50px;
   align-items: center;
+  gap: 2.5rem;
 }
 
 .sign-up__input {
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   border: none;
   width: 300px;
-  padding: 15px 40px;
+  padding: 25px 40px 20px;
   border-radius: 30px;
   background-color: #f43133;
   color: #000;
@@ -40,12 +44,54 @@
 ::placeholder {
   color: #000;
   text-align: center;
+  font-size: 1rem;
+}
+
+[type='radio'] {
+  opacity: 0;
+}
+
+.radio-input-container {
+  width: 300px;
+  display: flex;
+}
+[type='radio'] + label {
+  position: relative;
+  padding-left: 50px;
+  cursor: pointer;
+  display: inline-block;
+
+  line-height: 21px;
+}
+
+[type='radio'] + label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background-color: #f43133;
+  border-radius: 50%;
+}
+
+[type='radio']:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 17px;
+  height: 17px;
+  background-color: #000;
+  border-radius: 50%;
 }
 
 .btn-group {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  max-width: 275px;
+  margin-top: -10px;
 }
 .sign-up__btn {
   width: 100px;
@@ -63,4 +109,70 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+@media (min-width: 641px) {
+  .step-title {
+    font-size: 3rem;
+    max-width: 500px;
+    margin-bottom: 50px;
+  }
+  .step-subtitle {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  .sign-up__input {
+    line-height: 2rem;
+    width: 500px;
+  }
+  ::placeholder {
+    font-size: 1.5rem;
+  }
+
+  .radio-input-container {
+    width: 700px;
+    display: flex;
+  }
+
+  .sign-up__input-label {
+    font-size: 2.5rem;
+    margin-left: 30px;
+  }
+
+  [type='radio'] + label {
+    padding-left: 85px;
+    line-height: 50px;
+  }
+
+  [type='radio'] + label::before {
+    width: 50px;
+    height: 50px;
+  }
+  [type='radio']:checked + label::after {
+    left: 8px;
+    top: 8px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-group {
+    max-width: 80%;
+    margin-top: 50px;
+  }
+  .sign-up__btn {
+    width: 125px;
+
+    font-size: 1.5rem;
+  }
+  .logo {
+    height: 200px;
+    width: auto;
+  }
+}
+
+@media (min-width: 961px) {
+  .btn-group {
+    max-width: 550px;
+    margin-top: 50px;
+  }
 }
