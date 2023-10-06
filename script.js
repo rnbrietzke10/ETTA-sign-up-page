@@ -8,7 +8,7 @@ const joinDate = document.getElementById('join-date');
 // Classified info
 const email = document.getElementById('email');
 const username = document.getElementById('username');
-const password = document.getElementById(password);
+const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm-password');
 const form = document.getElementById('form');
 const errorMessage = document.getElementById('error');
@@ -16,7 +16,7 @@ const errorMessage = document.getElementById('error');
 /***************** handle multistep form ******************/
 
 const multiStepForm = document.querySelector('[data-multi-step]');
-
+console.log(multiStepForm);
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')];
 
 let currentStep = formSteps.findIndex(step => {
